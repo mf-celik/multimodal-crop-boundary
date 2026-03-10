@@ -1,5 +1,8 @@
 # multimodal-crop-boundary
 
+# 🚧 Under Construction
+This repository is currently under active development. Features, structure, and documentation may change.
+
 ## Overview
 
 This repository contains the implementation of a **dual-stream U-Net architecture** for accurate crop field boundary mapping using multimodal Sentinel-1 (SAR) and Sentinel-2 (optical) satellite data. The approach leverages spatial-channel attention mechanisms (scSE blocks) and composite edge-aware loss functions to produce sharp, continuous, and topologically consistent field boundaries.
