@@ -125,7 +125,7 @@ Input Feature Map (C, H, W)
 The model is trained with a composite edge-aware loss:
 
 ```
-L_total = L_BCE + L_Tversky + λ·L_Sobel
+L_total = λ·L_BCE + λ·L_Tversky + λ·L_Sobel
 ```
 
 - **Binary Cross-Entropy (BCE)**: Pixel-wise classification accuracy
