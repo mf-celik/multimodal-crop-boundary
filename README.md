@@ -21,7 +21,7 @@ The method is particularly effective for **small, fragmented agricultural fields
 ## Paper
 
 > **Edge-Aware Crop Field Boundary Mapping from Multimodal Sentinel-1 and Sentinel-2 Data**  
-> Mehmet Furkan Celik*, Claudio Persello, Andrew Nelson, Giulia Conchedda, Francesco Tubiello, Claudia Paris  
+> Mehmet Furkan Celik, Claudio Persello, Andrew Nelson, Giulia Conchedda, Francesco Tubiello, Claudia Paris  
 > IEEE Geoscience and Remote Sensing Letters, 2025
 
 Citation:
@@ -36,6 +36,16 @@ Citation:
 ## Architecture Overview
 
 ## Installation
+```bash
+pip install -r requirements.txt
+```
+
+Or using conda:
+```bash
+conda create -n crop-boundary python=3.10
+conda activate crop-boundary
+pip install -r requirements.txt
+```
 
 ### Prerequisites
 
