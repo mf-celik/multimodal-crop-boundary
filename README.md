@@ -30,3 +30,94 @@ Citation:
   year={2025}
 }
 ```
+## Architecture Overview
+
+## Installation
+
+### Prerequisites
+
+### Clone Repository
+
+## Dataset
+
+### AI4SmallFarms Benchmark
+Download the AI4SmallFarms dataset from the official repository:
+```bash
+# Clone the dataset repository
+git clone https://github.com/torresyp/AI4SmallFarms.git
+```
+
+### Extended Sentinel-1 Data
+Multitemporal Sentinel-1 VH backscatter coregistered with the existing Sentinel-2 data is available on Zenodo:
+```
+https://doi.org/10.5281/zenodo.18921642
+```
+
+Download and place the data in the `data/` directory:
+```
+data/
+├── S2/
+├── S1/
+├── train_tiles/
+├── val_tiles/
+└── test_tiles/
+```
+
+## Quick Start
+
+### 1. Training
+
+### 2. Inference
+
+### 3. Post-Processing
+
+### 4. Evaluation
+
+## Model Architecture
+
+### Dual-Stream U-Net with scSE Blocks
+
+**Encoder Path (Dual-Stream)**
+- Two parallel encoder streams process S1 and S2 independently
+- Each stream: Conv → BatchNorm → ReLU → scSE → MaxPool (4 stages)
+- scSE blocks enable spatial and channel attention
+- Progressive downsampling with receptive field expansion
+
+**Decoder Path (Shared)**
+- Single shared decoder upsamples fused features
+- Skip connections concatenate encoder features at each scale
+- Transposed convolutions for upsampling
+- scSE blocks for adaptive feature recalibration
+- Final refinement stage before output
+
+**Output Head**
+- Point-wise convolution → Sigmoid activation
+- Single-channel boundary probability map (0-1)
+
+### Spatial-Channel Squeeze-Excitation (scSE)
+```
+Input Feature Map (C, H, W)
+        |
+    ┌───┴───┐
+    ▼       ▼
+ Spatial  Channel
+   SE      SE
+    |       |
+    └───┬───┘
+        ▼
+  Recalibrated Features
+```
+
+## Loss Function
+
+The model is trained with a composite edge-aware loss:
+
+```
+L_total = L_BCE + L_Tversky + λ·L_Sobel
+```
+
+- **Binary Cross-Entropy (BCE)**: Pixel-wise classification accuracy
+- **Tversky Loss**: Class imbalance handling with asymmetric precision-recall weighting
+- **Sobel Edge Loss**: Gradient-based boundary sharpness and continuity penalty
+
+These three components balance region accuracy, robustness to imbalance, and boundary precision without over-parameterization (weights fixed to 1).
