@@ -41,10 +41,9 @@ Citation:
 ## Dataset
 
 ### AI4SmallFarms Benchmark
-Download the AI4SmallFarms dataset from the official repository:
-```bash
-# Clone the dataset repository
-git clone https://github.com/torresyp/AI4SmallFarms.git
+Download the AI4SmallFarms dataset from the official repository: 
+```
+https://doi.org/10.17026/DANS-XY6-NGG6
 ```
 
 ### Extended Sentinel-1 Data
