@@ -110,7 +110,7 @@ data/
 - Single-channel boundary probability map (0-1)
 
 <div align="center">
-    <img src="figures/mid_level_fusion_sketch.png" alt="dual-stream U-Net architecture for accurate crop boundary delineation with Sentinel-2 & Sentinel-1 images" height="px"/>
+    <img src="figures/mid_level_fusion_sketch.png" alt="dual-stream U-Net architecture for accurate crop boundary delineation with Sentinel-2 & Sentinel-1 images" width="700"/>
 </div>
 
 ### Spatial-Channel Squeeze-Excitation (scSE)
