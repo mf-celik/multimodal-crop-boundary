@@ -81,13 +81,11 @@ data/
 
 ## Quick Start
 
-### 1. Training
+### Training
 
-### 2. Inference
+### Inference
 
-### 3. Post-Processing
-
-### 4. Evaluation
+### Evaluation
 
 ## Model Architecture
 ### Dual-Stream U-Net with scSE Blocks
